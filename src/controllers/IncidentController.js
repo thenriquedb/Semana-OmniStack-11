@@ -9,7 +9,17 @@ class IncidentController {
       .count();
 
     const incidents = await db
-      .select()
+      .join('ongs', 'incidents.ong_id', '=', 'ongs.id')
+      .select(
+        [
+          'incidents.*',
+          'ongs.name ',
+          'ongs.email',
+          'ongs.whatsapp',
+          'ongs.city',
+          'ongs.uf'
+        ]
+      )
       .table('incidents')
       .limit(5)
       .offset((page - 1) * 5);
