@@ -4,7 +4,7 @@ const db = require('../database');
 class OngController {
   async index(req, res) {
     const ongs = await db.select().table('ongs');
-    return res.json({ ongs });
+    return res.json(ongs);
   }
 
   async store(req, res) {
