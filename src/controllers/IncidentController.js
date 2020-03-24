@@ -2,9 +2,21 @@ const db = require('../database');
 
 class IncidentController {
   async index(req, res) {
-    const incidents = await db.select().table('incidents');
+    const { page = 1 } = req.query;
+    const [count] = await db
+      .select()
+      .table('incidents')
+      .count();
 
-    return res.json({ incidents });
+    const incidents = await db
+      .select()
+      .table('incidents')
+      .limit(5)
+      .offset((page - 1) * 5);
+
+    res.header('X-Total-Count', count['count(*)']);
+
+    return res.json(incidents);
   }
 
   async store(req, res) {
