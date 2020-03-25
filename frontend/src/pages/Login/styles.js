@@ -24,9 +24,13 @@ export const Form = styled.form`
   flex-direction: column;
   margin-top: 10vh;
 
+  img {
+    margin-bottom: 8vh;
+  }
+
   h1 {
     font-size: 4vh;
-    margin: 2vh 0;
+    margin-bottom: 4vh;
   }
 
   a {
@@ -44,6 +48,11 @@ export const Form = styled.form`
   @media ${device.mobile} {
     margin-right: 0;
 
+    img {
+      margin-top: 50px;
+      margin-bottom: 14px;
+      height: 16vh;
+    }
     h1 {
       text-align: center;
     }
