@@ -28,11 +28,6 @@ export const Form = styled.form`
     margin-bottom: 8vh;
   }
 
-  h1 {
-    font-size: 4vh;
-    margin-bottom: 4vh;
-  }
-
   a {
     display: flex;
     align-items: center;
@@ -52,10 +47,6 @@ export const Form = styled.form`
       margin-top: 50px;
       margin-bottom: 14px;
       height: 16vh;
-    }
-
-    h1 {
-      text-align: center;
     }
   }
 `;

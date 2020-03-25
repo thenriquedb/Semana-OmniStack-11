@@ -11,7 +11,6 @@ export default function Login() {
     <Container>
       <Form>
         <img src={logoImg} alt="Be The Hero" />
-        <h1> Faça seu login</h1>
 
         <input type="text" placeholder="Sua ID" />
         <button type="button"> Entrar </button>
@@ -20,6 +19,7 @@ export default function Login() {
           Nâo tenho cadastro
         </Link>
       </Form>
+
       <HeroesImg src={heroesImg} alt="Heroes" />
     </Container>
   );
