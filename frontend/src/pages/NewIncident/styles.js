@@ -36,7 +36,7 @@ export const Section = styled.section`
   max-width: 380px;
 
   h1 {
-    margin: 4vh 0 4vh;
+    margin: 8vh 0 4vh;
     font-size: 6vh;
   }
 
@@ -61,6 +61,10 @@ export const Section = styled.section`
   @media ${device.mobile} {
     img {
       display: none;
+    }
+
+    h1 {
+      margin-top: 18vh;
     }
   }
 
