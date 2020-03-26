@@ -24,6 +24,11 @@ export const Content = styled.div`
     flex-direction: column;
     padding: 60px 20px;
   }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
 `;
 
 export const Section = styled.section`
@@ -31,12 +36,12 @@ export const Section = styled.section`
   max-width: 380px;
 
   h1 {
-    margin: 64px 0 32px;
+    margin: 4vh 0 4vh;
     font-size: 6vh;
   }
 
   p {
-    font-size: 18px;
+    font-size: 3vh;
     color: #737380;
     line-height: 32px;
   }
@@ -57,6 +62,15 @@ export const Section = styled.section`
     img {
       display: none;
     }
+  }
+
+  @media ${device.tablet} {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: 480px;
+    margin-top: 100px;
   }
 `;
 

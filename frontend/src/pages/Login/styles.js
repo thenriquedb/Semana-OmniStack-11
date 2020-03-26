@@ -14,6 +14,11 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 60px 10px;
   }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    padding: 60px 10px;
+  }
 `;
 
 export const Form = styled.form`
@@ -57,5 +62,9 @@ export const HeroesImg = styled.img`
 
   @media ${device.mobile} {
     height: 40vh;
+  }
+
+  @media ${device.tablet} {
+    height: 50vh;
   }
 `;
