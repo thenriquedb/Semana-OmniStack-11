@@ -33,34 +33,21 @@ export default createGlobalStyle`
     font-weight: 400;
   }
 
-  button { 
+  button {
     cursor: pointer;
-    width: 100%;
-    height: 60px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 16px;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background-color: #e02041;
-    color:#fff;
-    transition: filter 0.2s;
-
-    &:hover{
-      filter: brightness(90%)
-    }
+    background-color: transparent;
   }
 
-form input {
-  width: 100%;
-  height: 60px;
-  color: #333;
-  border: 1px solid #dcdce6;
-  border-radius: 8px;
-  padding: 0 24px;
-}
+  form input {
+    width: 100%;
+    height: 60px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+  }
+
+  ul {
+    list-style: none
+  }
 `;

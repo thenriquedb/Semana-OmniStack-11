@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import Button from '../../components/Button';
 
 import { Container, Form, HeroesImg } from './styles';
 import logoImg from '../../assets/logo.svg';
@@ -13,7 +14,7 @@ export default function Login() {
         <img src={logoImg} alt="Be The Hero" />
 
         <input type="text" placeholder="Sua ID" />
-        <button type="button"> Entrar </button>
+        <Button type="button"> Entrar </Button>
         <Link to="/register">
           <FiLogIn size={18} color="#e02041" />
           Nâo tenho cadastro

@@ -7,7 +7,7 @@ export const Container = styled.div`
   max-width: 1128px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   @media ${device.mobile} {

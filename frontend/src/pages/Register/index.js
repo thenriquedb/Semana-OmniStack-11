@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
 
 import logoImg from '../../assets/logo.svg';
 import { Container, Section, Content, Form } from './styles';
@@ -32,7 +33,7 @@ export default function Register() {
             <input placeholder="UF" style={{ width: 80 }} />
           </div>
 
-          <button type="submit">Cadastrar</button>
+          <Button type="submit">Cadastrar</Button>
         </Form>
       </Content>
     </Container>
