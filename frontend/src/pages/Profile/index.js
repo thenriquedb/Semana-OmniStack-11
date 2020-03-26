@@ -13,7 +13,7 @@ export default function Profile() {
         <img src={logoImg} alt="Be the Hero" />
         <p>Bem vinda, Sociedade Vencer</p>
 
-        <Link to="/incidents" style={{ marginLeft: 'auto' }}>
+        <Link to="/incidents/new" style={{ marginLeft: 'auto' }}>
           <Button type="button">Cadastrar novo caso</Button>
         </Link>
 

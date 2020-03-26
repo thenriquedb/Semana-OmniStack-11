@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import devices from '../../styles/devices';
 
 export const Container = styled.div`
   width: 100%;
@@ -7,8 +8,7 @@ export const Container = styled.div`
   margin: 32px auto;
 
   h1 {
-    margin-top: 80px;
-    margin-bottom: 24px;
+    margin: 24px 0;
   }
 `;
 
@@ -30,6 +30,17 @@ export const Header = styled.header`
     margin-left: auto;
     margin-top: 0;
   }
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a button {
+      margin-left: 0;
+      margin-top: 0;
+    }
+  }
 `;
 
 export const LogoutButton = styled.button`
@@ -50,6 +61,10 @@ export const Incidents = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 24px;
+
+  @media ${devices.mobile} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Incident = styled.li`
