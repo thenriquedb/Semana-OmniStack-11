@@ -21,7 +21,7 @@ export default function Incidents() {
     navigation.navigate('Detail');
   }
 
-  const incidents = [1, 2];
+  const incidents = [1, 2, 3, 4];
 
   return (
     <Container>
