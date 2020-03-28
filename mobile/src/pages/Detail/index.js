@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linking } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import * as MailComposer from 'expo-mail-composer';
 import { Feather } from '@expo/vector-icons';
 
@@ -23,7 +23,14 @@ import {
 
 export default function Detail() {
   const navigation = useNavigation();
-  const message = `Olá APAD, estou entrando em contato pois gostaria de ajudar no caso Cadelinha atropelada com o valor de R$ 120,00`;
+  const route = useRoute();
+
+  const { incident } = route.params;
+  const message = `Olá ${
+    incident.name
+  }, estou entrando em contato pois gostaria de ajudar no caso ${
+    incident.title
+  } com o valor de R$ ${incident.value.toFixed(2).replace('.', ',')}`;
 
   function navigateBack() {
     navigation.goBack();
@@ -32,13 +39,15 @@ export default function Detail() {
   function sendMail() {
     MailComposer.composeAsync({
       subject: 'Herói do caso: Cadelinha atropelada',
-      recipients: ['thenriquedb@gmail.com'],
+      recipients: [incident.email],
       body: message,
     });
   }
 
   function sendWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=+5537999165837&text=${message}`);
+    Linking.openURL(
+      `whatsapp://send?phone=${incident.whatsapp}&text=${message}`
+    );
   }
 
   return (
@@ -52,13 +61,15 @@ export default function Detail() {
 
       <Incident>
         <Property>ONG</Property>
-        <Value>Sociedade Vencer</Value>
+        <Value>
+          {incident.name} de {incident.city}-{incident.uf}
+        </Value>
 
         <Property>Caso</Property>
-        <Value>Cadela atropelada</Value>
+        <Value>{incident.title}</Value>
 
         <Property>Valor</Property>
-        <Value>R$ 120,00</Value>
+        <Value>R$ {incident.value.toFixed(2).replace('.', ',')}</Value>
       </Incident>
 
       <ContactBox>

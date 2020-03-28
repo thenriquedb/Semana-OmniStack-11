@@ -2,8 +2,8 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 12342,
-  "expoServerNgrokUrl": "https://jq-p5d.anonymous.mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.jq-p5d.anonymous.mobile.exp.direct",
-  "ngrokPid": 12379
+  "packagerPid": 29876,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

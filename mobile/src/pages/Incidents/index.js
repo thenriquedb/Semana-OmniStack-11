@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 import Incident from '../../components/Incident';
+import api from '../../services/api';
 
 import logoImg from '../../assets/logo.png';
 import {
@@ -15,20 +15,29 @@ import {
 } from './styles';
 
 export default function Incidents() {
-  const navigation = useNavigation();
+  const [incidents, setIncidents] = useState([]);
+  const [total, setTotal] = useState(0);
 
-  function navigateToDetail() {
-    navigation.navigate('Detail');
-  }
+  useEffect(() => {
+    async function loadIncidents() {
+      try {
+        const response = await api.get('/incidents');
+        setIncidents(response.data);
+        setTotal(response.headers['x-total-count']);
+      } catch (error) {
+        setIncidents([]);
+      }
+    }
 
-  const incidents = [1, 2, 3, 4];
+    loadIncidents();
+  }, []);
 
   return (
     <Container>
       <Header>
         <Logo source={logoImg} />
         <HeaderText>
-          Total de <HeaderTextBold>0 casos</HeaderTextBold>
+          Total de <HeaderTextBold>{total} casos</HeaderTextBold>
         </HeaderText>
       </Header>
 
@@ -36,11 +45,9 @@ export default function Incidents() {
       <Description>Escolha um dos casos abaixo e salve o dia. </Description>
 
       <IncidentsList
-        keyExtractor={(incident) => String(incident)}
+        keyExtractor={(incident) => String(incident.id)}
         data={incidents}
-        renderItem={({ incident }) => (
-          <Incident handleDetails={navigateToDetail} />
-        )}
+        renderItem={({ item: incident }) => <Incident incident={incident} />}
       />
     </Container>
   );
